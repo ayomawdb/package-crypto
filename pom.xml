@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2017, IN2 Ltd. (http://www.in2.hr) All Rights Reserved.
+  ~ Copyright (c) 2018, IN2 Ltd. (http://www.in2.hr) All Rights Reserved.
   ~
   ~ IN2 Ltd. licenses this file to you under the Apache License,
   ~ Version 2.0 (the "License"); you may not use this file except
@@ -19,8 +19,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>hr.in2.ballerina</groupId>
-    <artifactId>ballerina-crypto-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>crypto-parent</artifactId>
+    <version>0.0.1</version>
     <packaging>pom</packaging>
     <name>Ballerina - Crypto Parent</name>
 
