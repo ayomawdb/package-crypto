@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2017, IN2 Ltd. (http://www.in2.hr) All Rights Reserved.
+  ~ Copyright (c) 2018, IN2 Ltd. (http://www.in2.hr) All Rights Reserved.
   ~
   ~ IN2 Ltd. licenses this file to you under the Apache License,
   ~ Version 2.0 (the "License"); you may not use this file except
@@ -16,14 +16,15 @@
   ~ under the License.
   -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <groupId>hr.in2.ballerina</groupId>
-        <artifactId>ballerina-crypto-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ballerina-crypto</artifactId>
+    <parent>
+        <groupId>hr.in2.ballerina</groupId>
+        <artifactId>crypto-parent</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>in2-crypto</artifactId>
     <packaging>jar</packaging>
     <name>Ballerina - Crypto Component</name>
     <url>https://github.com/in2group/package-crypto</url>
@@ -77,7 +78,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>in2-${project.artifactId}-${project.version}</finalName>
+        <!--finalName>in2-${project.artifactId}-${project.version}</finalName-->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -94,7 +95,7 @@
                         <processor>org.ballerinalang.codegen.BallerinaAnnotationProcessor</processor>
                     </processors>
                     <options>
-                        <nativeEntityProviderPackage>hr.in2.ballerina.crypto.generated.providers</nativeEntityProviderPackage>
+                        <nativeEntityProviderPackage>org.ballerinalang.crypto.generated.providers</nativeEntityProviderPackage>
                         <nativeEntityProviderClass>StandardNativeElementProvider</nativeEntityProviderClass>
                     </options>
                 </configuration>
@@ -166,7 +167,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <finalName>in2-ballerina-crypto-package-${project.version}</finalName>
+                            <finalName>in2-crypto-package-${project.version}</finalName>
                             <artifactSet>
                                 <includes>
                                     <include>${project.groupId}:${project.artifactId}</include>

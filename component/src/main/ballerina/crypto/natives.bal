@@ -27,12 +27,22 @@ documentation { The `MD5` hashing algorithm }
 @final public Algorithm MD5 = "MD5";
 
 documentation {
+    The key types supported by this package.
+}
+public type KeyType "TEXT"|"BASE64";
+
+documentation { The `TEXT` key type }
+@final public KeyType TEXT = "TEXT";
+documentation { The `BASE64` key type }
+@final public KeyType BASE64 = "BASE64";
+
+documentation {
     Returns the HMAC value of the provided base string.
 
     P{{baseString}} The string to be hashed
     P{{keyString}} The key string
     P{{algorithm}} The hashing algorithm to be used
-	P{{isKeyBase64Encoded}} The flag to denote whether key is Base64 encoded
+	P{{keyType}} The key type to denote in what format key is
     R{{}} The hashed string
 }
-public native function hmac(string baseString, string keyString, Algorithm algorithm, boolean isKeyBase64Encoded = false) returns (string);
+public native function hmac(string baseString, string keyString, Algorithm algorithm, KeyType keyType = "TEXT") returns (string);
